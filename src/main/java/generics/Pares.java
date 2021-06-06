@@ -4,7 +4,7 @@ import java.util.LinkedHashSet;
 import java.util.Optional;
 import java.util.Set;
 
-public class Pares<C extends Number, V> {
+public class Pares<C, V> {
 
     private final Set<Par<C, V>> itens = new LinkedHashSet<>();
 

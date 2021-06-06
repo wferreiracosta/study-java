@@ -41,4 +41,5 @@ public class Par<C, V> {
     public int hashCode() {
         return Objects.hash(chave, valor);
     }
+
 }
