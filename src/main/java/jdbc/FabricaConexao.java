@@ -1,6 +1,5 @@
 package jdbc;
 
-import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,14 +10,17 @@ public class FabricaConexao {
 
     public static Connection getConexao() {
         try {
-            Properties properties = getProperties();
+//            Properties properties = getProperties();
+//            final String URL = properties.getProperty("banco.url");
+//            final String USUARIO = properties.getProperty("banco.usuario");
+//            final String SENHA = properties.getProperty("banco.senha");
 
-            final String URL = properties.getProperty("banco.url");
-            final String USUARIO = properties.getProperty("banco.usuario");
-            final String SENHA = properties.getProperty("banco.senha");
+            final String URL = "jdbc:mysql://localhost:3306/curso_java?verifyServerCertificate=false&useSSL=true";
+            final String USUARIO = "root";
+            final String SENHA = "password";
 
             return DriverManager.getConnection(URL, USUARIO, SENHA);
-        } catch (SQLException | IOException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
